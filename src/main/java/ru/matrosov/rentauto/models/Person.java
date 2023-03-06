@@ -1,16 +1,18 @@
 package ru.matrosov.rentauto.models;
 
 public class Person {
+    private int id;
     private int age;
     private String name;
     private String email;
-    private int id;
 
-    public Person(int age, String name, String email, int id) {
+
+    public Person(int id, int age, String name, String email) {
+        this.id = id;
         this.age = age;
         this.name = name;
         this.email = email;
-        this.id = id;
+
     }
 
     public int getAge() {
