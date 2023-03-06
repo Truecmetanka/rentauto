@@ -3,6 +3,7 @@ package ru.matrosov.rentauto.dao;
 import org.springframework.stereotype.Component;
 import ru.matrosov.rentauto.models.Person;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -10,6 +11,8 @@ public class PersonDAO {
     private List<Person> people;
 
     {
+        people = new ArrayList<>();
+
         people.add(new Person(1,19, "Danil", "Danil@mail.ru"));
         people.add(new Person(2, 20, "Sasha", "Sasha@mail.ru"));
         people.add(new Person(3, 20, "Egor", "Egor@mail.ru"));

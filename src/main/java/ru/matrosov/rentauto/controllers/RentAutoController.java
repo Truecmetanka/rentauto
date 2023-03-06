@@ -18,10 +18,9 @@ public class RentAutoController {
         this.personDAO = personDAO;
     }
 
-    @GetMapping("/hello")
-    public String test(Model model) {
-        model.addAttribute("key", "Hello");
-        return "hello";
+    @GetMapping("/")
+    public String test() {
+        return "startPage";
     }
 
     @GetMapping("/people")
@@ -30,7 +29,7 @@ public class RentAutoController {
         return "people/index";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/people/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDAO.show(id));
         return "people/show";
