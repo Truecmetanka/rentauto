@@ -12,6 +12,9 @@ public class Person {
         this.age = age;
         this.name = name;
         this.email = email;
+    }
+
+    public Person() {
 
     }
 

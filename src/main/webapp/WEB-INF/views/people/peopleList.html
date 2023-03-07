@@ -1,4 +1,4 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>List of people</title>
@@ -9,6 +9,11 @@
 <div th:each="person: ${people}">
     <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
 </div>
+
+
+<br/><br/>
+<a href="/cars">Car list</a>
+
 
 </body>
 
