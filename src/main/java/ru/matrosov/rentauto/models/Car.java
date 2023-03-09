@@ -1,8 +1,18 @@
 package ru.matrosov.rentauto.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "car")
 public class Car {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "modelname")
     private String modelName;
+    @Column(name = "licenseplate")
     private String licensePlate;
 
     public Car(int id, String model_name, String gos_number) {

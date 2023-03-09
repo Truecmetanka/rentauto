@@ -74,6 +74,7 @@ public class RentAutoController {
 
     @GetMapping("/cars")
     public String carsList(Model model) {
+        carDAO.index().stream().forEach(System.out::println);
         model.addAttribute("cars", carDAO.index());
         return "cars/carsList";
     }

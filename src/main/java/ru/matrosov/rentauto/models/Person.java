@@ -1,9 +1,20 @@
 package ru.matrosov.rentauto.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "person")
 public class Person {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "age")
     private int age;
+    @Column(name = "name")
     private String name;
+    @Column(name = "email")
     private String email;
 
 
