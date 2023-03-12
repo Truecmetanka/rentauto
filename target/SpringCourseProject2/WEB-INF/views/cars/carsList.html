@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>List of cars</title>
+</head>
+
+<body>
+
+<div th:each="car: ${cars}">
+    <a th:href="@{/cars/{id}(id=${car.getId()})}" th:text="${car.getModelName()}">user</a>
+</div>
+
+
+<br/><br/>
+<a href="/people">People list</a>
+
+
+</body>
+
+</html>

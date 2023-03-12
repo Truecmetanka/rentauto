@@ -26,7 +26,7 @@ public class CarDAO {
         return cars;
     }
 
-    @Transactional(readOnly = true)
+    @Transactional()
     public void save(Car car) {
         Session session = sessionFactory.openSession();
         session.persist(car);

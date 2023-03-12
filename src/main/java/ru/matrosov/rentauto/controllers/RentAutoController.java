@@ -8,6 +8,7 @@ import ru.matrosov.rentauto.dao.PersonDAO;
 import ru.matrosov.rentauto.models.Car;
 import ru.matrosov.rentauto.models.Person;
 import ru.matrosov.rentauto.dao.CarDAO;
+import ru.matrosov.rentauto.services.CarService;
 
 @Controller
 public class RentAutoController {
@@ -16,10 +17,13 @@ public class RentAutoController {
     private final PersonDAO personDAO;
     private final CarDAO carDAO;
 
+    private final CarService carService;
+
     @Autowired
-    public RentAutoController(PersonDAO personDAO, CarDAO carDAO) {
+    public RentAutoController(PersonDAO personDAO, CarDAO carDAO, CarService carService) {
         this.personDAO = personDAO;
         this.carDAO = carDAO;
+        this.carService = carService;
     }
 
     @GetMapping("/")
@@ -74,8 +78,7 @@ public class RentAutoController {
 
     @GetMapping("/cars")
     public String carsList(Model model) {
-        carDAO.index().stream().forEach(System.out::println);
-        model.addAttribute("cars", carDAO.index());
+        model.addAttribute("cars", carService.findAll());
         return "cars/carsList";
     }
 
